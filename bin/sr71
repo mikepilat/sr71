@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'sr71'
+require 'sr71/cli'
+
+Sr71::CLI.new.start
