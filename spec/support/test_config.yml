@@ -1,0 +1,7 @@
+google:
+  url: http://www.google.com
+  interval: 30
+
+example:
+  url: http://www.example.com
+  interval: 60

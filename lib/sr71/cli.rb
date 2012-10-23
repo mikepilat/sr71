@@ -14,11 +14,6 @@ module Sr71
 
           opts.separator ""
 
-          opts.on("-d", "--daemon", "Make server run as a Daemon.") { options[:daemonize] = true }
-          opts.on("-P","--pid=pid",String, "Specifies the PID file.",) { |v| options[:pid] = v }
-
-          opts.separator ""
-
           opts.on("-h", "--help", "Show this help message.") { puts opts; exit }
         end
 
@@ -36,8 +31,7 @@ module Sr71
         exit 1
       end
 
-      Sr71.logger.level = Sr71::Logger::Level::DEBUG if options[:verbose]
-      Sr71.config_dir = options[:config_dir]
+      Sr71.configure(options)
     end
   end
 end
