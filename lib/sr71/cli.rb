@@ -32,6 +32,7 @@ module Sr71
       end
 
       Sr71.configure(options)
+      Sr71.start!
     end
   end
 end
