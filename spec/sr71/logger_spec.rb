@@ -11,7 +11,7 @@ describe Sr71::Logger do
         })
       end
 
-      output.should == "{\"response\":\"200 OK\",\"foo\":\"bar\",\"baz\":\"blah\"}\n"
+      output.should == "{ \"response\": \"200 OK\", \"foo\": \"bar\", \"baz\": \"blah\" }\n"
     end
   end
 end
