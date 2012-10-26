@@ -3,6 +3,7 @@ require "em-http-request"
 
 require "sr71/configuration"
 require "sr71/http_check"
+require "sr71/logger"
 require "sr71/service"
 require "sr71/ticker"
 require "sr71/version"
