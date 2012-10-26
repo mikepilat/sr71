@@ -13,14 +13,9 @@ describe Sr71::Service do
 
   describe "start_check" do
     it "makes an HTTP request to the url" do
-      server = nil
-      EM.run do
-        server = StubServer.new(http_response("200 OK")) { EM.stop }
-
-        check = Sr71::Service.new("url" => "http://127.0.0.1:8081", "interval" => 30)
-        check.start_check
-      end
-      server.request_count.should == 1
+      service = Sr71::Service.new("url" => "http://127.0.0.1:8081", "interval" => 30)
+      Sr71::HttpCheck.should_receive(:check).with("http://127.0.0.1:8081")
+      service.start_check
     end
   end
 end

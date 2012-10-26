@@ -1,5 +1,5 @@
 module Sr71
-  class Check
+  class Service
     def initialize(attrs = {})
       @url        = attrs["url"]
       @interval   = attrs["interval"]
@@ -12,6 +12,7 @@ module Sr71
 
     def start_check
       @last_check = Time.now.to_f
+      HttpCheck.check(@url)
     end
   end
 end

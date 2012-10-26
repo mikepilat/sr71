@@ -5,8 +5,8 @@ module Sr71
     end
 
     def self.tick
-      Sr71.checks.each do |check|
-        check.start_check if check.needs_check?
+      Sr71.services.each do |service|
+        service.start_check if service.needs_check?
       end
     end
   end
